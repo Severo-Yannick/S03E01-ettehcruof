@@ -44,8 +44,9 @@ interface.on('line', (input) => {
   }
   // Le nombre est trouvé
   else if(input == '=' || input === 'gagné' || input === 'oui') {
-    console.log('Gagné !');
-    return;
+    console.log('Gagné ! ');
+    console.log('Fermeture de l\'interface');
+    interface.close();
   }
   // La saisie n'est pas conforme
   else {
