@@ -8,10 +8,20 @@ const interface = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
+
+// Générer un nombre aléatoire
+const getRandomInt = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min +1)) + min;
+}
+let proposition = (getRandomInt(1, 101));
+
 // Question posée au user
-console.log('Est-ce que le nombre est 50 ?');
+console.log(`Est-ce que le nombre est ${proposition} ?`);
 
 // Décrit quoi faire au user quand l'évent aura lieu
-interface.on('line', () => {
+interface.on('line', (input) => {
   console.log('Vous-avez rentré une valeur');
+  console.log(`Vous avez saisie ${input}`)
 });
