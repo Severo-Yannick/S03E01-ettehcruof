@@ -22,6 +22,21 @@ console.log(`Est-ce que le nombre est ${proposition} ?`);
 
 // Décrit quoi faire au user quand l'évent aura lieu
 interface.on('line', (input) => {
-  console.log('Vous-avez rentré une valeur');
-  console.log(`Vous avez saisie ${input}`)
+  console.log(`Vous avez saisie la valeur ==> ${input}`);
+  // Le nombre est trouvé
+  // Le nombre est supérieur
+  if(input == '+' || 'plus' || 'C\’est plus') {
+    console.log(`On va proposer plus grand`);
+  }
+  // Le nombre est inférieur
+  else if(input == '-' || 'moins' || 'C\’est moins') {
+    console.log(`On va proposer plus petit`);
+  }
+  else if(parseInt(input) === proposition) {
+    console.log('Gagné !');
+    return
+  }
+  else {
+    console.log('Désolé je ne comprends pas');
+  }
 });
